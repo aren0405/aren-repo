@@ -22,3 +22,14 @@ Resources:
             Ref: myVPC
           InternetGatewayId:
             Ref: myIGW
+
+  mySubnetpub1a:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId:
+        Ref: myVPC
+      CidrBlock: 10.0.0.0/24
+      AvailabilityZone: "ap-northeast-1a"
+      Tags:
+      - Key: Name
+        Value: subnet-pub1a
