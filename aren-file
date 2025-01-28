@@ -6,3 +6,19 @@ Resources:
       Tags:
       - Key: Name
         Value: aren-vpc-01
+
+
+  myIGW:
+        Type: AWS::EC2::InternetGateway
+        Properties:
+          Tags:
+          - Key: Name
+            Value: aren-igw-0128
+
+      AttachGateway:
+        Type: AWS::EC2::VPCGatewayAttachment
+        Properties:
+          VpcId:
+            Ref: myVPC
+          InternetGatewayId:
+            Ref: myIGW
